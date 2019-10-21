@@ -1,12 +1,13 @@
-import React from 'react'
-
-import { initializeApp } from '../config/firebase.config'
-
-exports.
+import React from "react"
+import { initializeApp } from "../config/firebase.config"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "../styles/main.css"
+import Header from "../components/header"
 
 export default () => (
-  <div style={{ color: `purple` }}>
+  <div>
     <Header></Header>
-    <p>What a world.</p>
+    <Header></Header>
+    <Header></Header>
   </div>
 )
