@@ -1,7 +1,8 @@
 import React from "react"
-import Header from "../components/header"
+import { initializeApp } from "../config/firebase.config"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../styles/main.css"
+import Header from "../components/header"
 
 export default () => (
   <div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react"
 import { Button } from "react-bootstrap"
 
@@ -14,3 +15,7 @@ export default () => (
     <div class="col-md-6">trocar</div>
   </div>
 )
+=======
+import React from 'react'
+export default () => <div>header</div>
+>>>>>>> e97af3db8b860fcfbd1ea2071cb8363fd92ac5b1
