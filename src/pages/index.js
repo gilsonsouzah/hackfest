@@ -1,8 +1,12 @@
 import React from "react"
 import Header from "../components/header"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "../styles/main.css"
+
 export default () => (
-  <div style={{ color: `purple` }}>
+  <div>
     <Header></Header>
-    <p>What a world.</p>
+    <Header></Header>
+    <Header></Header>
   </div>
 )

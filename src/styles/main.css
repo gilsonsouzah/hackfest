@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,500&display=swap");
+
+body {
+  font: normal 14px/26px "Roboto Mono", monospace;
+}
+
+h1 {
+  font: normal 30px/43px Roboto Mono;
+  letter-spacing: 3px;
+}
