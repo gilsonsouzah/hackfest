@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Button } from 'react-bootstrap'
 
 const DivPrincipal = styled.div`
   max-width: 600px;
@@ -13,7 +14,7 @@ const P = styled.p`
   width: 100%;
   height: 40px;
   font-size: 42px;
-  color: '#454750';
+  color: #454750;
 `
 
 const Input = styled.input`
@@ -22,6 +23,7 @@ const Input = styled.input`
   font-size: 16px;
   outline: none;
   border: none;
+  background-color: #ECEEF0;
   border-bottom: 1px solid #454750;
 `
 
@@ -32,24 +34,10 @@ const Footer = styled.div`
   margin-top: 100px;
 `
 
-const Button = styled.button`
-  width: 200px;
-  height: 47px;
-  background: none;
-  border: 1px solid #454750;
-  color: #454750;
-  outline: none;
-  box-shadow: 5px 5px;
-
-  :focus {
-    outline: 0;
-  }
-`
-
 const Ul = styled.ul``
 
 const Li = styled.li`
-  color: #71737E;
+  color: #71737e;
 `
 
 const Register = () => (
@@ -64,7 +52,9 @@ const Register = () => (
     <Input placeholder="seu endereço completo" />
 
     <Footer>
-      <Button>cadastrar</Button>
+      <Button className={'heroButton'} variant={'outline-dark'} onClick={() => alert(true)}>
+        cadastrar
+      </Button>
       <Ul>
         <Li>Você deve residir no Brasil;</Li>
         <Li>Seu PR deve ser aceito;</Li>
