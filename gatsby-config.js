@@ -35,20 +35,20 @@ module.exports = {
       options: {
         typeName: 'GitHub',
         fieldName: 'github',
-        // Create Apollo Link manually. Can return a Promise.
-        createLink: pluginOptions => {
-          return createHttpLink({
-            uri: 'https://api.github.com/graphql',
-            /*headers: {
-              'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-            },*/
-            fetch
-          })
+        // Url to query from
+        url: 'https://api.github.com/graphql',
+        // HTTP headers
+        /*headers: {
+          // Learn about environment variables: https://gatsby.dev/env-vars
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`
+        },*/
+        fetchOptions: {},
+
+        createSchema: async () => {
+          const json = JSON.parse(fs.readFileSync(`${__dirname}/schema.public.graphql`))
+          return buildClientSchema(json.data)
         }
       }
     }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ]
 }
