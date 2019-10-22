@@ -1,5 +1,5 @@
 import React from 'react'
 
-const Footer = () => <footer>esse é o rodapé</footer>
+const Footer = () => <footer></footer>
 
 export default Footer
