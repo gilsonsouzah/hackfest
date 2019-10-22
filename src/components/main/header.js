@@ -1,12 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
+import { Button } from 'react-bootstrap'
 
-const SCHeader = styled.div`
-  width: 100%;
-  height: 680px;
-  background-color: #ffffff;
-`
-
-const Header = () => <SCHeader>esse é o cabeçalho</SCHeader>
+const Header = () => (
+  <header>
+    <a href={'/'}>Hacktober Fest 2019 Vitta</a>
+    <h1>
+      Apoie nossos projetos <a href={'/'}>open source</a> e ganhe uma camiseta exclusiva
+    </h1>
+    <Button onClick={() => alert(true)}>Show Alert</Button>
+  </header>
+)
 
 export default Header

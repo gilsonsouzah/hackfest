@@ -1,19 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
+import { Card } from 'react-bootstrap'
 
-// import { graphql } from 'gatsby'
-
-const SCCard = styled.div`
-  background-color: pink;
-  width: 80%;
-  /* height: 100px; */
-`
-
-const Card = ({ data }) => (
-  <SCCard>
+const ProjCard = ({ data }) => (
+  <Card>
     <h1>{data.repository.name}</h1> <span> #{data.repository.issues.totalCount} </span>
     <p>{data.repository.description}</p>
-  </SCCard>
+  </Card>
 )
 /*
 const query = graphql`
@@ -28,4 +20,4 @@ const query = graphql`
   }
 `*/
 
-export default Card
+export default ProjCard

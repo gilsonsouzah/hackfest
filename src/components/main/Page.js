@@ -1,23 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
-
+import { Container } from 'react-bootstrap'
 import { Header, Body, Footer } from '..'
 
-const SCPage = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  background-color: brown;
-`
+const fluid = 'container-fluid'
 
 const Page = () => (
-  <SCPage>
-    <Header></Header>
-    <Body></Body>
-    <Footer></Footer>
-  </SCPage>
+  <Container>
+    <Header class={fluid}></Header>
+    <Body class={fluid}></Body>
+    <Footer class={fluid}></Footer>
+  </Container>
 )
 
 export default Page
