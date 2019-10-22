@@ -1,8 +1,22 @@
-const functions = require('firebase-functions');
+const functions = require('firebase-functions')
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+const admin = require('firebase-admin')
+
+const express = require('express')
+const cors = require('cors')
+
+const app = express()
+app.use(cors({ origin: true }))
+
+app.post('/collaborator', async (req, res) => {
+  const original = req.body
+  const snapshot = await admin
+    .database()
+    .ref('/collaborator')
+    .push({ original: original })
+  res.redirect(303, snapshot.ref.toString())
+})
+
+admin.initializeApp()
+
+exports.addCollaborator = functions.https.onRequest(app)
