@@ -1,6 +1,7 @@
 import React from 'react'
 import authService from '../../authService'
 import { Button, Container, Row, Col } from 'react-bootstrap'
+import Logo from '../Logo'
 
 const loginUser = async () => {
   try {
@@ -13,9 +14,7 @@ const Header = () => (
   <Container>
     <Row>
       <Col md={6} style={{ maxWidth: '600px', paddingBottom: '116px' }}>
-        <a className={'logo'} href={'/'}>
-          <span className="sr-only">Hacktober Fest 2019 Vitta</span>
-        </a>
+        <Logo />
         <h1 className={'heroTitle'}>
           Apoie nossos projetos <a href={'/'}>open source</a> e ganhe uma camiseta
           exclusiva
