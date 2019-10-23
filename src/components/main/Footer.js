@@ -36,8 +36,12 @@ const Footer = () => (
           <li> - Compartilhar código é o que nos une;</li>
           <li> - Devolver para a sociedade;</li>
           <li> - OpenSource é livre de discriminações e preconceitos;</li>
-          <li> - OpenSource é Inclusão Social;</li>
+          <li> - OpenSource é inclusão Social;</li>
           <li> - Espaço democrático e aberto a todos;</li>
+          <li>
+            - Usamos código aberto e acreditamos que isso potencializa a criação de
+            empresas;
+          </li>
         </Ul>
         <Button
           href={'https://vitta.com.br/?utm_source=hacktober_site'}

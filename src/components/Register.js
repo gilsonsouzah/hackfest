@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 
@@ -48,14 +48,24 @@ const Li = styled.li`
 `
 
 const Register = () => {
-  const actualUser = JSON.parse(localStorage.user)
   const [user, setUser] = useState({
-    name: actualUser.name || '',
-    email: actualUser.email || '',
+    name: '',
+    email: '',
     postalCode: '',
     address: '',
-    photoUrl: actualUser.photoUrl || ''
+    photoUrl: ''
   })
+
+  useEffect(() => {
+    const actualUser = JSON.parse(localStorage.getItem('user'))
+    if (actualUser)
+      setUser({
+        ...user,
+        name: actualUser.name || '',
+        email: actualUser.email || '',
+        photoUrl: actualUser.photoUrl || ''
+      })
+  }, [])
 
   const [alert, setAlert] = useState({})
 

@@ -26,14 +26,11 @@ const getUser = async () => {
 const sendUser = async user => {
   try {
     const token = JSON.parse(localStorage.getItem('user')).token
-
-    console.log('-- token', token)
     const result = await axios.post(
       'https://us-central1-hackfest2019-21c8c.cloudfunctions.net/api/collaborator',
       user,
       { headers: { Authorization: `Bearer ${token}` } }
     )
-    console.log('-- result -- ', result)
     return result
   } catch (err) {
     console.error(err)
