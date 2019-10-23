@@ -1,24 +1,8 @@
 import React from 'react'
 
 import { Card, Button } from 'react-bootstrap'
-import { StaticQuery, graphql } from 'gatsby'
 
-
-export default () => <StaticQuery
-query={graphql`
-query {
-  github {
-    repository(owner: "vitta-health", name: "vi-ui") {
-      name
-      description
-      url
-      issues(states: OPEN) {
-        totalCount
-      }
-    }
-  }
-}`}
-render={data => (
+export default ({ project }) => (
   <Card
     style={{
       minWidth: 300,
@@ -29,18 +13,16 @@ render={data => (
     }}
   >
     <Card.Body>
-      <Card.Title>{data.github.repository.name}  #{ data.github.repository.issues.totalCount} issues</Card.Title>
+      <Card.Title>{project.name}  #{ project.issues.totalCount} issues</Card.Title>
       <Card.Text>
-      {data.github.repository.description}
+      {project.description}
       </Card.Text>
       <Button
-        className={'heroButton'}
         variant={'outline-dark'}
-        href={data.github.repository.url}
+        href={project.url}
       >
         contribuir
       </Button>
     </Card.Body>
   </Card>
-)}
-/>
+);

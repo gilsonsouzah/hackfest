@@ -6,5 +6,6 @@ import Footer from './main/Footer'
 import Page from './main/Page'
 import Register from './Register'
 import VCard from './main/VCard'
+import Projects from './main/Projects'
 
-export { Header, Body, Footer, Page, Register, VCard }
+export { Header, Body, Footer, Page, Register, VCard, Projects }

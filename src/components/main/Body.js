@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Row, Col, Container } from 'react-bootstrap'
-import { Register, VCard } from '../'
+import { Register, VCard, Projects } from '../'
 
 const Body = ({ data }) => (
   <div style={{ backgroundColor: '#ECEEF0', paddingTop: 80, paddingBottom: 80 }}>
@@ -11,8 +11,7 @@ const Body = ({ data }) => (
           <Register></Register>
         </Col>
         <Col xs={{ order: 1 }} style={{ borderRight: '1px solid #BDC5CE' }}>
-          <VCard project="vi-ui"></VCard>
-          <VCard project="attiv"></VCard>
+          <Projects> </Projects>
         </Col>
       </Row>
     </Container>
