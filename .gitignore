@@ -66,3 +66,8 @@ typings/
 cache
 .idea
 yarn.lock
+
+public/index.html
+public/manifest.webmanifest
+public/page-data/dev-404-page/page-data.json
+public/page-data/index/page-data.json

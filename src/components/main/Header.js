@@ -1,8 +1,13 @@
 import React from 'react'
 import { Button, Container, Row, Col } from 'react-bootstrap'
+import Img from 'gatsby-image';
+import { graphql } from "gatsby"
 
 const Header = () => (
   <Container>
+    <Row>
+      <img src="/images/github.png" /> Login
+    </Row>
     <Row>
       <Col md={6} style={{ maxWidth: '480px' }}>
         <a className={'logo'} href={'/'}>
