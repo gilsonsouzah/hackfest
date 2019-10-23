@@ -33,7 +33,7 @@ div[role='group'][tabindex] {
 
 .heroButton {
   font-size: 13px 20px;
-  margin: 0 0 116px;
+  float: left;
 }
 
 .heroImages {
@@ -49,8 +49,6 @@ div[role='group'][tabindex] {
 
 .btn {
   border-radius: 0;
-  position: relative;
-  z-index: 3;
   box-shadow: 4px 4px 0 0 #fff, 4px 4px 0 1px #000;
 }
 
@@ -73,4 +71,28 @@ div[role='group'][tabindex] {
 
 .btn-outline-dark:active img {
   filter: invert(100%);
+}
+
+.card-title {
+  font-size: 30px;
+  font-weight: 400;
+  border-bottom: #e9ebf4 1px solid;
+  padding: 0 0 20px;
+  margin: 0 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CardIssues {
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  color: #666a77;
+}
+
+.card-text {
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  color: #454750;
+  margin-bottom: 40px;
 }

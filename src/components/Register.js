@@ -1,13 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from 'react-bootstrap'
+import { Button, Container, Row, Col } from 'react-bootstrap'
 
 const DivPrincipal = styled.div`
   max-width: 600px;
   display: flex;
   flex-flow: row;
   flex-direction: column;
-  margin: 20px;
 `
 
 const TitleForm = styled.h2`
@@ -28,14 +27,11 @@ const Input = styled.input`
 `
 
 const Footer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 100px;
+  margin: 80px 0 50px;
 `
 
 const Ul = styled.ul`
-  margin: 0;
+  padding: 0;
 `
 
 const Li = styled.li`
@@ -63,13 +59,22 @@ const Register = () => (
     <Input placeholder="seu endereço completo" />
 
     <Footer>
-      <Button variant={'outline-dark'} onClick={() => alert(true)}>
-        cadastrar
-      </Button>
-      <Ul>
-        <Li>* Você deve residir no Brasil;</Li>
-        <Li>* Seu PR deve ser aceito;</Li>
-      </Ul>
+      <Container>
+        <Row className={'justify-content-between'}>
+          <Col className={'pa-0 mb-3'} md={'auto'} sm={12}>
+            <Button variant={'outline-dark'} onClick={() => alert(true)}>
+              cadastrar
+            </Button>
+          </Col>
+          <Col className={'pa-0'} md={'auto'} sm={12}>
+            <Ul>
+              <Li>* Você deve residir no Brasil;</Li>
+              <Li>* Seu PR deve ser aceito;</Li>
+            </Ul>
+          </Col>
+        </Row>
+        <Row></Row>
+      </Container>
     </Footer>
   </DivPrincipal>
 )

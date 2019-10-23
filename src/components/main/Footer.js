@@ -40,10 +40,13 @@ const Footer = () => (
           <li> - Espaço democrático e aberto a todos;</li>
         </Ul>
         <Button
-          className={'heroButton'}
           href={'https://vitta.com.br/?utm_source=hacktober_site'}
           target={'_blank'}
           variant={'outline-dark'}
+          style={{
+            float: 'none',
+            margin: '0 0 111px'
+          }}
         >
           conheça mais sobre a Vitta
         </Button>

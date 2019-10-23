@@ -5,24 +5,20 @@ import { Card, Button } from 'react-bootstrap'
 export default ({ project }) => (
   <Card
     style={{
-      minWidth: 300,
-      maxWidth: 400,
-      height: 340,
-      marginBottom: 50,
-      border: 0
+      marginBottom: '50px',
+      border: 0,
+      padding: '20px'
     }}
   >
     <Card.Body>
-      <Card.Title>{project.name}  #{ project.issues.totalCount} issues</Card.Title>
-      <Card.Text>
-      {project.description}
-      </Card.Text>
-      <Button
-        variant={'outline-dark'}
-        href={project.url}
-      >
+      <Card.Title as={'h3'}>
+        <span className={'CardProject'}>{project.name}</span>
+        <span className={'CardIssues'}>#{project.issues.totalCount} issues</span>
+      </Card.Title>
+      <Card.Text>{project.description}</Card.Text>
+      <Button targe={'_blank'} variant={'outline-dark'} href={project.url}>
         contribuir
       </Button>
     </Card.Body>
   </Card>
-);
+)

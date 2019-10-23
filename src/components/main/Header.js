@@ -2,7 +2,7 @@ import React from 'react'
 import authService from '../../authService'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 
-const loginUser = async () =>  {
+const loginUser = async () => {
   try {
     const user = authService.getUser()
     localStorage.setItem('user', JSON.stringify(user))
@@ -12,7 +12,7 @@ const loginUser = async () =>  {
 const Header = () => (
   <Container>
     <Row>
-      <Col md={6} style={{ maxWidth: '600px' }}>
+      <Col md={6} style={{ maxWidth: '600px', paddingBottom: '116px' }}>
         <a className={'logo'} href={'/'}>
           <span className="sr-only">Hacktober Fest 2019 Vitta</span>
         </a>
@@ -20,17 +20,20 @@ const Header = () => (
           Apoie nossos projetos <a href={'/'}>open source</a> e ganhe uma camiseta
           exclusiva
         </h1>
-        <Button className={'heroButton'} variant={'outline-dark'} href="#projects">
+        <Button
+          className={'heroButton'}
+          style={{ margin: '0 20px 20px 0' }}
+          variant={'outline-dark'}
+          href="#projects"
+        >
           conheça os projetos
         </Button>
         <Button
-          style={{ marginLeft: '20px' }}
           className={'heroButton'}
           onClick={() => loginUser()}
           variant="outline-dark"
         >
-          <img src="/images/github.png" style={{ marginRight: '5px', height: '20px' }} />{' '}
-          login
+          <img src="/images/github.png" style={{ height: '18px' }} /> login
         </Button>
       </Col>
       <Col md={6} className={'heroImages d-none d-md-block'}>
