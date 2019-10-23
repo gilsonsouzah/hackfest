@@ -106,12 +106,14 @@ const Register = () => {
 
   const findAndFillAddress = async () => {
     try {
-      const address = await findCEPAddress(user.postalCode.replace(/\D+/g, ''))
+      if (user.postalCode && user.postalCode.replace(/\D+/g, '')) {
+        const address = await findCEPAddress(user.postalCode.replace(/\D+/g, ''))
 
-      setUser({
-        ...user,
-        address: `${address.logradouro}, ${address.complemento} - ${address.bairro}, ${address.localidade} - ${address.uf}`
-      })
+        setUser({
+          ...user,
+          address: `${address.logradouro}, ${address.complemento} - ${address.bairro}, ${address.localidade} - ${address.uf}`
+        })
+      }
     } catch (err) {
       console.error(err)
     }
