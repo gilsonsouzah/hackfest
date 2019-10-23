@@ -31,8 +31,12 @@ div[role='group'][tabindex] {
 
 .heroImages {
   margin: 84px 0 0;
-  min-width: 977px;
-  overflow: hidden;
+}
+
+.heroImages img {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .btn {

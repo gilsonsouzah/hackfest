@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 
 const Header = () => (
-  <Container fluid={true}>
+  <Container>
     <Row>
       <Col md={6} style={{ maxWidth: '480px' }}>
         <a className={'logo'} href={'/'}>
@@ -20,7 +20,7 @@ const Header = () => (
           conheça os projetos
         </Button>
       </Col>
-      <Col md={6} className={'heroImages d-xl-none'}>
+      <Col md={6} className={'heroImages d-sm-none dxs-none d-md-block'}>
         <img src="/images/vitta_developer.png" alt="" />
       </Col>
     </Row>
