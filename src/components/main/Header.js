@@ -3,13 +3,13 @@ import { Button, Container, Row, Col } from 'react-bootstrap'
 import Img from 'gatsby-image';
 import { graphql } from "gatsby"
 
-const Header = ({data}) => (
-  <Container fluid={true}>
+const Header = () => (
+  <Container>
     <Row>
       <img src="/images/github.png" /> Login
     </Row>
     <Row>
-      <Col md={6} style={{ maxWitdh: '100px' }}>
+      <Col md={6} style={{ maxWidth: '480px' }}>
         <a className={'logo'} href={'/'}>
           <span className="sr-only">Hacktober Fest 2019 Vitta</span>
         </a>
@@ -18,14 +18,14 @@ const Header = ({data}) => (
           exclusiva
         </h1>
         <Button
-          className={'heroButton'}
+          className={'heroButton '}
           variant={'outline-dark'}
           onClick={() => alert(true)}
         >
           conheça os projetos
         </Button>
       </Col>
-      <Col md={6} className={'heroImages'}>
+      <Col md={6} className={'heroImages d-sm-none dxs-none d-md-block'}>
         <img src="/images/vitta_developer.png" alt="" />
       </Col>
     </Row>

@@ -1,45 +1,17 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import { Button, Row, Col, Card } from 'react-bootstrap'
-import { Register } from '../'
+
+import { Row, Col } from 'react-bootstrap'
+import { Register, VCard } from '../'
 
 const Body = ({data}) => (
   <Row style={{ backgroundColor: '#ECEEF0' }}>
     <Col style={{ paddingLeft: 40, paddingTop: 80 }}>
       <Row style={{ borderRight: '1px solid #BDC5CE' }}>
         <Col xs={12}>
-          <Card
-            style={{
-              minWidth: 300,
-              maxWidth: 400,
-              height: 340,
-              marginBottom: 50,
-              border: 0
-            }}
-          >
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
+          <VCard></VCard>
         </Col>
         <Col xs={12}>
-          <Card style={{ minWidth: 300, maxWidth: 400, height: 340, border: 0 }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
+          <VCard></VCard>
         </Col>
       </Row>
     </Col>
