@@ -16,7 +16,7 @@ export default ({ project }) => (
         <span className={'CardIssues'}>#{project.issues.totalCount} issues</span>
       </Card.Title>
       <Card.Text>{project.description}</Card.Text>
-      <Button targe={'_blank'} variant={'outline-dark'} href={project.url}>
+      <Button target={'_blank'} variant={'outline-dark'} href={project.url}>
         contribuir
       </Button>
     </Card.Body>
