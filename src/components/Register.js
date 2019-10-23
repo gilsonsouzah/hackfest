@@ -50,15 +50,31 @@ const Register = () => {
     name: '',
     email: '',
     postalCode: '',
-    address: ''
+    address: '',
+    photoUrl: ''
   })
 
   const loginUser = async () => {
     try {
+      if (user.name) {
+        setUser({
+          name: '',
+          email: '',
+          postalCode: '',
+          address: '',
+          photoUrl: ''
+        })
+        return
+      }
       const githubUser = await getUser()
       console.log('user fetched --', githubUser)
       localStorage.setItem('user', JSON.stringify(githubUser))
-      setUser({ ...user, name: githubUser.name, email: githubUser.email || user.email })
+      setUser({
+        ...user,
+        photoUrl: githubUser.photoUrl,
+        name: githubUser.name,
+        email: githubUser.email || user.email
+      })
     } catch (err) {
       console.error(err)
     }
@@ -79,6 +95,7 @@ const Register = () => {
 
     alert(JSON.stringify(result))
   }
+
   return (
     <DivPrincipal>
       <TitleForm>
@@ -118,17 +135,23 @@ const Register = () => {
       <Footer>
         <Container>
           <Row className={'justify-content-between'}>
-            <Col className={'pa-0 mb-3'} md={'auto'} sm={12}>
+            <Col className={'pa-0 mb-3'} sm={12}>
               <Button
                 className={'heroButton'}
                 onClick={() => loginUser()}
                 variant="outline-dark"
               >
-                <img src="/images/github.png" style={{ height: '18px' }} /> login
+                <img
+                  src={user.photoUrl || '/images/github.png'}
+                  style={{ height: '18px', borderRadius: 50 }}
+                />{' '}
+                {user.name.split(' ')[0] || 'conectar'}
               </Button>
-            </Col>
-            <Col className={'pa-0 mb-3'} md={'auto'} sm={12}>
-              <Button variant={'outline-dark'} onClick={() => submitForm()}>
+              <Button
+                className={'ml-3'}
+                variant={'outline-dark'}
+                onClick={() => submitForm()}
+              >
                 cadastrar
               </Button>
             </Col>
@@ -136,6 +159,7 @@ const Register = () => {
               <Ul>
                 <Li>* Você deve residir no Brasil;</Li>
                 <Li>* Seu PR deve ser aceito;</Li>
+                <Li>* Seu PR deve ser submetido até 23/11;</Li>
               </Ul>
             </Col>
           </Row>

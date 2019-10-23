@@ -17,9 +17,8 @@ div[role='group'][tabindex] {
 }
 
 .logo {
-  background: url('/images/hacktober-2019-vitta.jpg') no-repeat;
-  background-size: cover;
-  width: 211px;
+  background: url('/images/logo.svg') no-repeat;
+  background-size: contain;
   height: 105px;
   display: block;
   margin: 58px 0 80px;

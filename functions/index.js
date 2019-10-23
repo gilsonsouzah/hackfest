@@ -6,7 +6,7 @@ const express = require('express')
 const cors = require('cors')
 
 const app = express()
-app.use(cors({ origin: true }))
+app.use(cors())
 
 app.post('/collaborator', async (req, res) => {
   const original = req.body

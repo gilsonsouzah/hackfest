@@ -8,8 +8,8 @@ const Header = () => (
       <Col md={6} style={{ maxWidth: '600px', paddingBottom: '116px' }}>
         <Logo />
         <h1 className={'heroTitle'}>
-          Apoie nossos projetos <a href={'/'}>open source</a> e ganhe uma camiseta
-          exclusiva
+          Apoie nossos projetos <br />
+          <a href={'/'}>open source</a> e ganhe uma camiseta exclusiva
         </h1>
         <Button
           className={'heroButton'}
