@@ -1,9 +1,15 @@
 import React from 'react'
 import { Button, Container, Row, Col } from 'react-bootstrap'
+import { Helmet } from 'react-helmet'
 import Logo from '../Logo'
 
 const Header = () => (
   <Container>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>HackFest 2019 - Vitta</title>
+      <link rel="canonical" href="http://hack.vitta.me" />
+    </Helmet>
     <Row>
       <Col md={6} style={{ maxWidth: '600px', paddingBottom: '116px' }}>
         <Logo />

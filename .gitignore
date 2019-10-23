@@ -76,3 +76,4 @@ public/commons-*
 public/component-*
 public/webpack*
 public/styles*
+.firebase/*
