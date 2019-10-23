@@ -37,4 +37,14 @@ const sendUser = async user => {
   }
 }
 
-export { getUser, sendUser }
+const findCEPAddress = async cep => {
+  try {
+    const result = await axios.get(`https://viacep.com.br/ws/${cep}/json`)
+
+    return result
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export { getUser, sendUser, findCEPAddress }

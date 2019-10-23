@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 
-import { getUser, sendUser } from '../service'
+import { getUser, sendUser, findCEPAddress } from '../service'
 
 import { MyAlert } from './'
 
@@ -104,6 +104,19 @@ const Register = () => {
     }
   }
 
+  const findAndFillAddress = async () => {
+    try {
+      const address = await findCEPAddress(user.postalCode.replace(/\D+/g, ''))
+
+      setUser({
+        ...user,
+        address: `${address.logradouro}, ${address.complemento} - ${address.bairro}, ${address.localidade} - ${address.uf}`
+      })
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   const isInvalidObjectFields = obj =>
     Object.keys(obj).some(key => {
       return obj[key] === null || obj[key] === undefined || obj[key] === ''
@@ -172,6 +185,7 @@ const Register = () => {
             postalCode: event.target.value.replace(/([0-9]{5})([\d]{3})/, '$1-$2')
           })
         }
+        onBlur={event => findAndFillAddress()}
       />
       <Input
         placeholder="seu endereço completo"
