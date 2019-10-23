@@ -2,9 +2,9 @@ import React from 'react'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 
 const Header = () => (
-  <Container style={{ width: '100%' }}>
+  <Container fluid={true}>
     <Row>
-      <Col>
+      <Col md={6} style={{ maxWitdh: '100px' }}>
         <a className={'logo'} href={'/'}>
           <span className="sr-only">Hacktober Fest 2019 Vitta</span>
         </a>
@@ -20,7 +20,7 @@ const Header = () => (
           conheça os projetos
         </Button>
       </Col>
-      <Col>
+      <Col md={6} className={'heroImages'}>
         <img src="/images/vitta_developer.png" alt="" />
       </Col>
     </Row>
