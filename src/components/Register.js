@@ -23,7 +23,7 @@ const Input = styled.input`
   font-size: 16px;
   outline: none;
   border: none;
-  background-color: #ECEEF0;
+  background-color: #eceef0;
   border-bottom: 1px solid #454750;
 `
 
@@ -52,7 +52,11 @@ const Register = () => (
     <Input placeholder="seu endereço completo" />
 
     <Footer>
-      <Button className={'heroButton'} variant={'outline-dark'} onClick={() => alert(true)}>
+      <Button
+        className={'heroButton'}
+        variant={'outline-dark'}
+        onClick={() => alert(true)}
+      >
         cadastrar
       </Button>
       <Ul>

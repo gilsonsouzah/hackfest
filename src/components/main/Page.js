@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import { Header, Body, Footer } from '..'
 
 const Page = () => (
-  <Container fluid="true">
+  <Container fluid={true}>
     <Header></Header>
     <Body></Body>
     <Footer></Footer>

@@ -29,6 +29,12 @@ div[role='group'][tabindex] {
   margin: 110px;
 }
 
+.heroImages {
+  margin: 84px 0 0;
+  max-width: 977px;
+  overflow: hidden;
+}
+
 .btn {
   border-radius: 0;
   position: relative;
