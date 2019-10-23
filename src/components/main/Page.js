@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import { Header, Body, Footer, Register } from '..'
+import { Header, Body, Footer } from '..'
 
 const Page = () => (
   <Container fluid={true}>
