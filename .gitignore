@@ -64,7 +64,5 @@ typings/
 .cache/
 
 cache
-./public
 .idea
-public
 yarn.lock

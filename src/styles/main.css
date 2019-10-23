@@ -26,12 +26,12 @@ div[role='group'][tabindex] {
 
 .heroButton {
   font-size: 13px 20px;
-  margin: 110px;
+  margin: 0 0 116px;
 }
 
 .heroImages {
   margin: 84px 0 0;
-  max-width: 977px;
+  min-width: 977px;
   overflow: hidden;
 }
 
