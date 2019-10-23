@@ -28,12 +28,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Hacktober 2019 Vitta`,
+        short_name: `Hacktober Vitta`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`
+        background_color: `#FFF`,
+        theme_color: `#327dff`,
+        display: `minimal-ui`,
+        icon: 'https://vitta.com.br/wp-content/uploads/2019/09/Azul-Vertical.png'
       }
     },
     {
