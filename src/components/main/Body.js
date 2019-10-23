@@ -10,15 +10,9 @@ const Body = ({ data }) => (
         <Col xs={{ order: 2 }}>
           <Register></Register>
         </Col>
-        <Col xs={{ order: 1 }} style={{ paddingLeft: 40 }}>
-          <Row style={{ borderRight: '1px solid #BDC5CE' }}>
-            <Col xs={12}>
-              <VCard project="vi-ui"></VCard>
-            </Col>
-            <Col xs={12}>
-              <VCard project="attiv"></VCard>
-            </Col>
-          </Row>
+        <Col xs={{ order: 1 }} style={{ borderRight: '1px solid #BDC5CE' }}>
+          <VCard project="vi-ui"></VCard>
+          <VCard project="attiv"></VCard>
         </Col>
       </Row>
     </Container>
