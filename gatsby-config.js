@@ -1,3 +1,7 @@
+const fetch = require(`node-fetch`)
+const path = require("path")
+const fs = require("fs")
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 })
@@ -12,6 +16,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -28,19 +39,15 @@ module.exports = {
       options: {
         typeName: 'GitHub',
         fieldName: 'github',
-        // Url to query from
         url: 'https://api.github.com/graphql',
-        // HTTP headers
         /*headers: {
-          // Learn about environment variables: https://gatsby.dev/env-vars
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`
+          Authorization: `Bearer YOUR_GITHUB_PERSONAL_ACCESS_TOKEN`,
         },*/
-        fetchOptions: {},
-
+        fetch,
         createSchema: async () => {
-          const json = JSON.parse(fs.readFileSync(`${__dirname}/schema.public.graphql`))
+          const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
           return buildClientSchema(json.data)
-        }
+        },
       }
     }
   ]
