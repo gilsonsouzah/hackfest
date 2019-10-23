@@ -13,7 +13,6 @@ const VCard = ({data}) => (
       border: 0
     }}
   >
-    <Card.Img variant="top" src="holder.js/100px180" />
     <Card.Body>
       <Card.Title>{data.repository.name}</Card.Title>
       <Card.Text>
