@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: normal 14px/26px 'Roboto Mono', monospace;
   background-color: #fff;

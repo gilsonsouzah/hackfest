@@ -36,7 +36,7 @@ const Header = () => (
       <Col md={6} className={'heroImages d-none d-md-block'}>
         <img
           src="/images/vitta_developer.png"
-          srcset="/images/vitta_developer2@x.png 2x,
+          srcset="/images/vitta_developer@2x.png 2x,
             /images/vitta_developer.png 1x"
           alt=""
         />

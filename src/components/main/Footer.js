@@ -16,8 +16,11 @@ const Ul = styled.ul`
 `
 
 const Vitta = styled.p`
+  background: url('/images/vitta.png') left center no-repeat;
   font: normal 10px/32px Roboto Mono;
   letter-spacing: 1px;
+  padding-left: 40px;
+  margin: -27px 0 71px;
 `
 
 const Footer = () => (
