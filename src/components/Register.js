@@ -60,7 +60,7 @@ const Register = () => {
 
   useEffect(() => {
     const actualUser = JSON.parse(localStorage.getItem('user'))
-    if (actualUser)
+    if (actualUser) {
       setUser({
         ...user,
         name: actualUser.name || '',
@@ -68,7 +68,8 @@ const Register = () => {
         photoUrl: actualUser.photoUrl || ''
       })
 
-    setFirstName(actualUser.name.split(' ')[0])
+      setFirstName(actualUser.name.split(' ')[0])
+    }
   }, [])
 
   const [alert, setAlert] = useState({})
