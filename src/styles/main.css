@@ -3,6 +3,8 @@
 body {
   font: normal 14px/26px 'Roboto Mono', monospace;
   background-color: #fff;
+  color: #454750;
+  background: url('/images/bg.jpg') top center no-repeat;
 }
 
 div[role='group'][tabindex] {
@@ -19,7 +21,7 @@ div[role='group'][tabindex] {
 }
 
 .heroTitle {
-  font: normal 30px/43px 'Roboto Mono', monospace;
+  font: normal 29px/43px 'Roboto Mono', monospace;
   letter-spacing: 3px;
   margin-bottom: 53px;
 }
