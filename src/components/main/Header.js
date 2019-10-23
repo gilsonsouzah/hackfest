@@ -2,9 +2,10 @@ import React from 'react'
 import authService from '../../authService'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 
-const loginUser = () => {
+const loginUser = async () =>  {
   try {
-    const user = authService.getUser();
+    const user = await authService.getUser();
+    console.log(user);
     localStorage.setItem("user", JSON.stringify(user));
   } catch (err) {
 
