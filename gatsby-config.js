@@ -1,6 +1,6 @@
 const fetch = require(`node-fetch`)
-const path = require("path")
-const fs = require("fs")
+const path = require('path')
+const fs = require('fs')
 const { buildClientSchema } = require(`graphql`)
 const { createHttpLink } = require(`apollo-link-http`)
 
@@ -18,12 +18,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`),
-      },
+        path: path.join(__dirname, `src`, `images`)
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -41,10 +42,10 @@ module.exports = {
       options: {
         typeName: 'GitHub',
         fieldName: 'github',
-        url: "https://api.github.com/graphql",
+        url: 'https://api.github.com/graphql',
         headers: {
-          Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-        },
+          Authorization: `bearer ${process.env.GITHUB_TOKEN}`
+        }
       }
     }
   ]

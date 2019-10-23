@@ -28,7 +28,7 @@ export default () => (
     render={data =>
       data.github.viewer.repositories.nodes
         .filter(obj => ['Vi-Ui', 'attiv'].includes(obj.name))
-        .map(project => <VCard project={project}></VCard>)
+        .map(project => <VCard key={project.name} project={project}></VCard>)
     }
   />
 )

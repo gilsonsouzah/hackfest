@@ -12,7 +12,7 @@ const Separator = styled.div`
   margin 0 auto 30px
 `
 
-const Body = ({ data }) => (
+const Body = () => (
   <div style={{ backgroundColor: '#ECEEF0', paddingTop: '80px', paddingBottom: '30px' }}>
     <Container>
       <Row id="projects" className="justify-content-between">

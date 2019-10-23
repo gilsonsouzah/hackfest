@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Button, Container, Row, Col } from 'react-bootstrap'
+
+import { getUser, sendUser } from '../service'
 
 const DivPrincipal = styled.div`
   max-width: 600px;
@@ -43,40 +45,105 @@ const Li = styled.li`
   line-height: 22px;
 `
 
-const Register = () => (
-  <DivPrincipal>
-    <TitleForm>
-      <span style={{ color: '#2881FF', fontWeight: 500 }}>Cadastre-se</span>
-      <br />
-      para enviarmos
-      <br />
-      sua camiseta
-    </TitleForm>
+const Register = () => {
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    postalCode: '',
+    address: ''
+  })
 
-    <Input placeholder="seu nome completo" />
-    <Input placeholder="seu e-mail" />
-    <Input placeholder="seu cep" />
-    <Input placeholder="seu endereço completo" />
+  const loginUser = async () => {
+    try {
+      const githubUser = await getUser()
+      console.log('user fetched --', githubUser)
+      localStorage.setItem('user', JSON.stringify(githubUser))
+      setUser({ ...user, name: githubUser.name, email: githubUser.email || user.email })
+    } catch (err) {
+      console.error(err)
+    }
+  }
 
-    <Footer>
-      <Container>
-        <Row className={'justify-content-between'}>
-          <Col className={'pa-0 mb-3'} md={'auto'} sm={12}>
-            <Button variant={'outline-dark'} onClick={() => alert(true)}>
-              cadastrar
-            </Button>
-          </Col>
-          <Col className={'pa-0'} md={'auto'} sm={12}>
-            <Ul>
-              <Li>* Você deve residir no Brasil;</Li>
-              <Li>* Seu PR deve ser aceito;</Li>
-            </Ul>
-          </Col>
-        </Row>
-        <Row></Row>
-      </Container>
-    </Footer>
-  </DivPrincipal>
-)
+  const isInvalidObjectFields = obj =>
+    Object.keys(obj).some(key => {
+      return obj[key] === null || obj[key] === undefined || obj[key] === ''
+    })
+
+  const submitForm = async () => {
+    if (isInvalidObjectFields(user)) {
+      console.log('--- no data -- ')
+      return
+    }
+
+    const result = await sendUser(user)
+
+    alert(JSON.stringify(result))
+  }
+  return (
+    <DivPrincipal>
+      <TitleForm>
+        <span style={{ color: '#2881FF', fontWeight: 500 }}>Cadastre-se</span>
+        <br />
+        para enviarmos
+        <br />
+        sua camiseta
+      </TitleForm>
+
+      <Input
+        placeholder="seu nome completo"
+        value={user.name}
+        onChange={event => setUser({ ...user, name: event.target.value })}
+      />
+      <Input
+        placeholder="seu e-mail"
+        value={user.email}
+        onChange={event => setUser({ ...user, email: event.target.value })}
+      />
+      <Input
+        placeholder="seu cep"
+        value={user.postalCode}
+        onChange={event =>
+          setUser({
+            ...user,
+            postalCode: event.target.value.replace(/([0-9]{5})([\d]{3})/, '$1-$2')
+          })
+        }
+      />
+      <Input
+        placeholder="seu endereço completo"
+        value={user.address}
+        onChange={event => setUser({ ...user, address: event.target.value })}
+      />
+
+      <Footer>
+        <Container>
+          <Row className={'justify-content-between'}>
+            <Col className={'pa-0 mb-3'} md={'auto'} sm={12}>
+              <Button
+                className={'heroButton'}
+                onClick={() => loginUser()}
+                variant="outline-dark"
+              >
+                <img src="/images/github.png" style={{ height: '18px' }} /> login
+              </Button>
+            </Col>
+            <Col className={'pa-0 mb-3'} md={'auto'} sm={12}>
+              <Button variant={'outline-dark'} onClick={() => submitForm()}>
+                cadastrar
+              </Button>
+            </Col>
+            <Col className={'pa-0'} md={'auto'} sm={12}>
+              <Ul>
+                <Li>* Você deve residir no Brasil;</Li>
+                <Li>* Seu PR deve ser aceito;</Li>
+              </Ul>
+            </Col>
+          </Row>
+          <Row></Row>
+        </Container>
+      </Footer>
+    </DivPrincipal>
+  )
+}
 
 export default Register

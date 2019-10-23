@@ -1,14 +1,6 @@
 import React from 'react'
-import authService from '../../authService'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 import Logo from '../Logo'
-
-const loginUser = async () => {
-  try {
-    const user = authService.getUser()
-    localStorage.setItem('user', JSON.stringify(user))
-  } catch (err) {}
-}
 
 const Header = () => (
   <Container>
@@ -27,18 +19,11 @@ const Header = () => (
         >
           conheça os projetos
         </Button>
-        <Button
-          className={'heroButton'}
-          onClick={() => loginUser()}
-          variant="outline-dark"
-        >
-          <img src="/images/github.png" style={{ height: '18px' }} /> login
-        </Button>
       </Col>
       <Col md={6} className={'heroImages d-none d-md-block'}>
         <img
           src="/images/vitta_developer.png"
-          srcset="/images/vitta_developer@2x.png 2x,
+          srcSet="/images/vitta_developer@2x.png 2x,
             /images/vitta_developer.png 1x"
           alt=""
         />

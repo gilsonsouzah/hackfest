@@ -19,4 +19,4 @@ app.post('/collaborator', async (req, res) => {
 
 admin.initializeApp()
 
-exports.addCollaborator = functions.https.onRequest(app)
+exports.api = functions.https.onRequest(app)
