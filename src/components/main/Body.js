@@ -10,10 +10,10 @@ const Body = ({ data }) => (
         <Col style={{ paddingLeft: 40, paddingTop: 80 }}>
           <Row style={{ borderRight: '1px solid #BDC5CE' }}>
             <Col xs={12}>
-              <VCard></VCard>
+              <VCard project="vi-ui"></VCard>
             </Col>
             <Col xs={12}>
-              <VCard></VCard>
+              <VCard project="attiv"></VCard>
             </Col>
           </Row>
         </Col>
