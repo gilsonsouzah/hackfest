@@ -25,6 +25,7 @@ div[role='group'][tabindex] {
 
 .heroButton {
   font-size: 13px 20px;
+  margin: 110px;
 }
 
 .btn {

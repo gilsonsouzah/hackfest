@@ -5,12 +5,13 @@ import { Header, Body, Footer, Register } from '..'
 const fluid = 'container-fluid'
 
 const Page = () => (
- 
-  <Container>
-    <Header className={fluid}></Header>
-    <Body className={fluid}></Body>
-    <Footer className={fluid}></Footer>
-  </Container>
+  <Register>
+    <Container>
+      <Header className={fluid}></Header>
+      <Body className={fluid}></Body>
+      <Footer className={fluid}></Footer>
+    </Container>
+  </Register>
 )
 
 export default Page
