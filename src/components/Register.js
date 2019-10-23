@@ -10,16 +10,16 @@ const DivPrincipal = styled.div`
   margin: 20px;
 `
 
-const P = styled.p`
-  width: 100%;
-  height: 40px;
+const TitleForm = styled.h2`
   font-size: 42px;
   color: #454750;
+  font-weight: 400;
+  line-height: 58px;
 `
 
 const Input = styled.input`
   margin-top: 50px;
-  padding: 0 0 20px 2px;
+  padding: 0 0 15px 2px;
   font-size: 16px;
   outline: none;
   border: none;
@@ -34,17 +34,28 @@ const Footer = styled.div`
   margin-top: 100px;
 `
 
-const Ul = styled.ul``
+const Ul = styled.ul`
+  margin: 0;
+`
 
 const Li = styled.li`
   color: #71737e;
+  letter-spacing: 1.1px;
+  font-size: 11px;
+  list-style: none;
+  padding: 0;
+  line-height: 22px;
 `
 
 const Register = () => (
   <DivPrincipal>
-    <P style={{ color: '#2881FF' }}>Cadastre-se</P>
-    <P>para enviarmos</P>
-    <P>sua camiseta</P>
+    <TitleForm>
+      <span style={{ color: '#2881FF', fontWeight: 500 }}>Cadastre-se</span>
+      <br />
+      para enviarmos
+      <br />
+      sua camiseta
+    </TitleForm>
 
     <Input placeholder="seu nome completo" />
     <Input placeholder="seu e-mail" />
@@ -52,16 +63,12 @@ const Register = () => (
     <Input placeholder="seu endereço completo" />
 
     <Footer>
-      <Button
-        className={'heroButton'}
-        variant={'outline-dark'}
-        onClick={() => alert(true)}
-      >
+      <Button variant={'outline-dark'} onClick={() => alert(true)}>
         cadastrar
       </Button>
       <Ul>
-        <Li>Você deve residir no Brasil;</Li>
-        <Li>Seu PR deve ser aceito;</Li>
+        <Li>* Você deve residir no Brasil;</Li>
+        <Li>* Seu PR deve ser aceito;</Li>
       </Ul>
     </Footer>
   </DivPrincipal>
