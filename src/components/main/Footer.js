@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Button, Row, Col, Card } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 const Titulo = styled.div`
   font-size: 30px;
@@ -26,7 +26,9 @@ const Footer = () => (
       <li> - OpenSource é Inclusão Social;</li>
       <li> - Espaço democrático e aberto a todos;</li>
     </Ul>
-    <Button>conheça mais sobre a Vitta</Button>
+    <Button className={'heroButton'} variant={'outline-dark'} onClick={() => alert(true)}>
+      conheça mais sobre a Vitta
+    </Button>
     <Vitta>Vitta Tecnologia em Saúde S.A. - {new Date().getFullYear()}</Vitta>
   </footer>
 )
