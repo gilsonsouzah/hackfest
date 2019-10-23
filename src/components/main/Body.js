@@ -10,10 +10,10 @@ const Body = ({ data }) => (
         <Col style={{ paddingLeft: 40, paddingTop: 80 }}>
           <Row style={{ borderRight: '1px solid #BDC5CE' }}>
             <Col xs={12}>
-              <VCard></VCard>
+              <VCard project="vi-ui"></VCard>
             </Col>
             <Col xs={12}>
-              <VCard></VCard>
+              <VCard project="attiv"></VCard>
             </Col>
           </Row>
         </Col>
@@ -24,23 +24,4 @@ const Body = ({ data }) => (
     </Container>
   </div>
 )
-/*
-export const GatsbyQuery =  graphql`
-query {
-  github {
-    viewer {
-      repositories(
-        privacy: PUBLIC
-        affiliations: OWNER
-        isFork: false
-        first: 100
-      ) {
-        nodes {
-          name
-          url
-        }
-      }
-    }
-  }
-}`*/
 export default Body
