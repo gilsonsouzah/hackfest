@@ -56,6 +56,8 @@ const Register = () => {
     photoUrl: ''
   })
 
+  const [firstName, setFirstName] = useState('')
+
   useEffect(() => {
     const actualUser = JSON.parse(localStorage.getItem('user'))
     if (actualUser)
@@ -65,6 +67,8 @@ const Register = () => {
         email: actualUser.email || '',
         photoUrl: actualUser.photoUrl || ''
       })
+
+    setFirstName(actualUser.name.split(' ')[0])
   }, [])
 
   const [alert, setAlert] = useState({})
@@ -123,7 +127,7 @@ const Register = () => {
       return
     }
     try {
-      const result = await sendUser(user)
+      await sendUser(user)
       setAlert({
         show: true,
         message: 'Dados enviados com sucesso!',
@@ -196,7 +200,7 @@ const Register = () => {
                   src={user.photoUrl || '/images/github.png'}
                   style={{ height: '18px', borderRadius: 50 }}
                 />{' '}
-                {localStorage.user ? user.name.split(' ')[0] : 'conectar'}
+                {firstName ? firstName : 'conectar'}
               </Button>
               <Button
                 className={'ml-3'}
