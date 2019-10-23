@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Container, Row, Col, Card } from 'react-bootstrap'
+import { Button, Row, Col, Card } from 'react-bootstrap'
 import { Register } from '../'
 
 const Body = () => (
