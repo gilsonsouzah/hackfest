@@ -15,12 +15,15 @@ const Ul = styled.ul`
   margin-bottom: 48px;
 `
 
-const Vitta = styled.div``
+const Vitta = styled.p`
+  font: normal 10px/32px Roboto Mono;
+  letter-spacing: 1px;
+`
 
 const Footer = () => (
   <Container style={{ marginTop: '46px' }}>
     <Row>
-      <Col md={6} sm={8}>
+      <Col md={6} sm={9}>
         <Titulo>
           Por que acreditamos
           <br />
@@ -43,7 +46,7 @@ const Footer = () => (
         </Button>
         <Vitta>Vitta Tecnologia em Saúde S.A. - {new Date().getFullYear()}</Vitta>
       </Col>
-      <Col md={6} sm={4} className={'d-none d-sm-block'}>
+      <Col md={6} sm={3} className={'d-none d-sm-block'}>
         <img style={{ maxWidth: '100%' }} src={'/images/open-source.svg'} alt={''} />
       </Col>
     </Row>
