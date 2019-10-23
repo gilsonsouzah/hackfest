@@ -5,6 +5,7 @@ body {
   background-color: #fff;
   color: #454750;
   background: url('/images/bg.jpg') top center no-repeat;
+  background-size: 100vw;
 }
 
 div[role='group'][tabindex] {
