@@ -6,11 +6,7 @@ const Header = () => (
     <Row>
       <Col>
         <a className={'logo'} href={'/'}>
-<<<<<<< Updated upstream
           <span className="sr-only">Hacktober Fest 2019 Vitta</span>
-=======
-          <span class="sr-only">Hacktober Fest 2019 Vitta</span>
->>>>>>> Stashed changes
         </a>
         <h1 className={'heroTitle'}>
           Apoie nossos projetos <a href={'/'}>open source</a> e ganhe uma camiseta

@@ -10,7 +10,8 @@ div[role='group'][tabindex] {
 }
 
 .logo {
-  background: url('/images/hacktober-2019-vitta.png');
+  background: url('/images/hacktober-2019-vitta@2x.png') no-repeat;
+  background-size: cover;
   width: 211px;
   height: 105px;
   display: block;
