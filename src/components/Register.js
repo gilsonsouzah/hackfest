@@ -4,6 +4,8 @@ import { Button, Container, Row, Col } from 'react-bootstrap'
 
 import { getUser, sendUser } from '../service'
 
+import { MyAlert } from './'
+
 const DivPrincipal = styled.div`
   max-width: 600px;
   display: flex;
@@ -29,7 +31,7 @@ const Input = styled.input`
 `
 
 const Footer = styled.div`
-  margin: 80px 0 50px;
+  margin: 30px 0 50px;
 `
 
 const Ul = styled.ul`
@@ -46,13 +48,16 @@ const Li = styled.li`
 `
 
 const Register = () => {
+  const actualUser = JSON.parse(localStorage.user)
   const [user, setUser] = useState({
-    name: '',
-    email: '',
+    name: actualUser.name || '',
+    email: actualUser.email || '',
     postalCode: '',
     address: '',
-    photoUrl: ''
+    photoUrl: actualUser.photoUrl || ''
   })
+
+  const [alert, setAlert] = useState({})
 
   const loginUser = async () => {
     try {
@@ -67,7 +72,6 @@ const Register = () => {
         return
       }
       const githubUser = await getUser()
-      console.log('user fetched --', githubUser)
       localStorage.setItem('user', JSON.stringify(githubUser))
       setUser({
         ...user,
@@ -76,6 +80,11 @@ const Register = () => {
         email: githubUser.email || user.email
       })
     } catch (err) {
+      setAlert({
+        show: true,
+        message: 'Não foi possível fazer login!',
+        variant: 'danger'
+      })
       console.error(err)
     }
   }
@@ -86,14 +95,37 @@ const Register = () => {
     })
 
   const submitForm = async () => {
-    if (isInvalidObjectFields(user)) {
-      console.log('--- no data -- ')
+    if (!localStorage.user) {
+      setAlert({
+        show: true,
+        message: 'Usuário precisa logar antes de enviar os dados!',
+        variant: 'danger'
+      })
       return
     }
 
-    const result = await sendUser(user)
-
-    alert(JSON.stringify(result))
+    if (isInvalidObjectFields(user)) {
+      setAlert({
+        show: true,
+        message: 'Preencha todos os campos antes de enviar!',
+        variant: 'danger'
+      })
+      return
+    }
+    try {
+      const result = await sendUser(user)
+      setAlert({
+        show: true,
+        message: 'Dados enviados com sucesso!',
+        variant: 'success'
+      })
+    } catch (err) {
+      setAlert({
+        show: true,
+        message: 'Erro ao submeter formulário!',
+        variant: 'danger'
+      })
+    }
   }
 
   return (
@@ -131,6 +163,15 @@ const Register = () => {
         value={user.address}
         onChange={event => setUser({ ...user, address: event.target.value })}
       />
+      <Row className={'mt-5'}>
+        <Col>
+          <MyAlert
+            message={alert.message}
+            variant={alert.variant}
+            show={alert.show}
+          ></MyAlert>
+        </Col>
+      </Row>
 
       <Footer>
         <Container>
@@ -145,7 +186,7 @@ const Register = () => {
                   src={user.photoUrl || '/images/github.png'}
                   style={{ height: '18px', borderRadius: 50 }}
                 />{' '}
-                {user.name.split(' ')[0] || 'conectar'}
+                {localStorage.user ? user.name.split(' ')[0] : 'conectar'}
               </Button>
               <Button
                 className={'ml-3'}

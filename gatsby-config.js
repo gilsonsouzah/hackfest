@@ -35,7 +35,7 @@ module.exports = {
         background_color: `#FFF`,
         theme_color: `#327dff`,
         display: `minimal-ui`,
-        icon: 'https://vitta.com.br/wp-content/uploads/2019/09/Azul-Vertical.png'
+        icon: 'Azul-Vertical.png'
       }
     },
     {
